@@ -71,11 +71,11 @@ LIMIT 3;
 
 # QUESTION 6
 
-East Harlem South
+Upper East Side North
 
 SELECT "zones"."Zone" FROM "zones" 
 RIGHT JOIN
-(SELECT  "green_taxis"."DOLocationID", SUM("green_taxis"."trip_distance") as sum_trip_distance
+(SELECT  "green_taxis"."DOLocationID", SUM("green_taxis"."tip_amount") as sum_tip_amount
 FROM "zones"
 LEFT JOIN "green_taxis"
 ON "zones"."LocationID" = "green_taxis"."PULocationID"
@@ -83,7 +83,7 @@ where CAST("green_taxis"."lpep_pickup_datetime" AS DATE) >= '2019-10-01' and
 CAST("green_taxis"."lpep_pickup_datetime" AS DATE) <= '2019-10-31'
 and "zones"."Zone" = 'East Harlem North'
 GROUP BY "green_taxis"."DOLocationID") s on "s"."DOLocationID" = "zones"."LocationID"
-ORDER BY "s"."sum_trip_distance" DESC
+ORDER BY "s"."sum_tip_amount" DESC
 LIMIT 1
 
 
