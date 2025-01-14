@@ -87,5 +87,6 @@ ORDER BY "s"."sum_trip_distance" DESC
 LIMIT 1
 
 
+# QUESTION 7
 
-
+terraform init, terraform apply -auto-aprove, terraform destroy
