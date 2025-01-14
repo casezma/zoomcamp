@@ -50,14 +50,14 @@ trip_distance > 10;
 # QUESTION 4
 
 2019-10-31
-
+````
 select CAST(lpep_pickup_datetime AS DATE) 
 from green_taxis group by lpep_pickup_datetime order by SUM(trip_distance) DESC 
 LIMIT 1;       
-
+````
 
 # QUESTION 5
-
+````
 East Harlem North, East Harlem South, Morningside Heights
 
 SELECT "zones"."Zone"
@@ -68,9 +68,9 @@ where CAST("green_taxis"."lpep_pickup_datetime" AS DATE) = '2019-10-18'
 GROUP BY "zones"."Zone"
 ORDER BY SUM("green_taxis"."total_amount") DESC
 LIMIT 3;
-
+````
 # QUESTION 6
-
+````
 JFK Airport
 
 SELECT "zones"."Zone" FROM "zones" 
@@ -85,8 +85,9 @@ and "zones"."Zone" = 'East Harlem North'
 GROUP BY "green_taxis"."DOLocationID") s on "s"."DOLocationID" = "zones"."LocationID"
 ORDER BY "s"."max_tip_amount" DESC
 LIMIT 1
-
+````
 
 # QUESTION 7
-
+````
 terraform init, terraform apply -auto-aprove, terraform destroy
+````
