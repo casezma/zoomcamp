@@ -1,0 +1,1 @@
+docker run -i -t hashicorp/terraform:latest plan
